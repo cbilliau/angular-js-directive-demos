@@ -16,13 +16,13 @@ angular.module('megaVideoDemo', []).
 					for (source in sourceTypes) {
 						if (attrs.hasOwnProperty(source)) {
 							scope.sources.push(
-								{ type: sourceTypes[source].type, 
+								{ type: sourceTypes[source].type,
 								  src: $sce.trustAsResourceUrl(attrs[source])
 								}
 							);
 						}
 					}
-					
+
 				}
 				processSources();
 				scope.video =  {
@@ -38,14 +38,14 @@ angular.module('megaVideoDemo', []).
 						videoPlayer.pause();
 						videoPlayer.currentTime = 0;
 						scope.video.status = 'stop'
-                    },
-                    togglePlay: function() {
-                        scope.video.status == 'play' ? this.pause() : this.play();
-                    },
-                	width: attrs.width,
-                	height: attrs.height
-                };
+          },
+          togglePlay: function() {
+            scope.video.status == 'play' ? this.pause() : this.play();
+          },
+          width: attrs.width,
+          height: attrs.height
+          };
 			},
 
-        }
+      }
     });
